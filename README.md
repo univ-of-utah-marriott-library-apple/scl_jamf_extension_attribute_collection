@@ -118,9 +118,7 @@ This EA checks if Time Machine itself is configured, whether a Time Machine volu
 
 ![](imgs/timemachine.png)
 
-
-
-###Attached Displays
+### Attached Displays
 
 This EA returns the number and information about the displays attached to a machine.
 
@@ -138,7 +136,7 @@ Here is the data returned for each display:
 | 1: SHARP HDMI, Primary, 1920 x 1080 @ 60 Hz (1920 x 1080) | Single Sharp display.                    |
 
 
-###External Encrypted Disks
+### External Encrypted Disks
 
 This EA was written to [assist another JAMF user](https://www.jamf.com/jamf-nation/discussions/25854/inventory-report-external-hard-drive). It returns the number of attached hard drives, and the number of encrypted drives.
 
