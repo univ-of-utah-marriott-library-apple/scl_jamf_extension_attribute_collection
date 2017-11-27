@@ -57,11 +57,11 @@ def main():
 
             if int(match.group(1)) < 30:
                 if "AppleBluetoothHIDKeyboard" in device:
-                    device_output = "BlueTooth Keyboard at " + match.group(1) + "%"
+                    device_output = "Bluetooth Keyboard at " + match.group(1) + "%"
                 elif "BNBTrackpadDevice" in device:
-                    device_output = "BlueTooth Trackpad at " + match.group(1) + "%"
+                    device_output = "Bluetooth Trackpad at " + match.group(1) + "%"
                 elif "BNBMouseDevice" in device:
-                    device_output = "BlueTooth Mouse at " + match.group(1) + "%"
+                    device_output = "Bluetooth Mouse at " + match.group(1) + "%"
                 else:
                     continue
             else:
