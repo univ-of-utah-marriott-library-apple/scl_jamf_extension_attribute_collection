@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-# Copyright (c) 2016 University of Utah Student Computing Labs. ################
+# Copyright (c) 2020 University of Utah Student Computing Labs. ################
 # All Rights Reserved.
 #
 # Permission to use, copy, modify, and distribute this software and
@@ -19,6 +19,8 @@
 # A Python script to report estimated manufacture date.
 #
 #    1.0.0  2016.03.xx      Initial release tjm
+#
+#    1.0.1  2020.02.19      Hack to fix year loop. tjm
 #
 #
 ################################################################################
@@ -55,6 +57,12 @@ def offline_estimated_manufacture(serial):
             alpha_year = 'cdfghjklmnpqrstvwxyz'
             year = serial[3].lower()
             est_year = 2010 + (alpha_year.index(year) / 2)
+
+            #
+            # This is a crazy hack. T2's appeared in 2018, pretty sure all machines have them by 2020.
+            if t2_present() and est_year < 2018:
+                est_year += 10
+
             # 1st or 2nd half of the year
             est_half = alpha_year.index(year) % 2
             week = serial[4].lower()
@@ -66,6 +74,11 @@ def offline_estimated_manufacture(serial):
                 year_time += week_dif
             est_date = u'' + year_time.strftime('%Y-%m-%d')
     return est_date
+
+def t2_present():
+
+    t2_raw = subprocess.check_output(['system_profiler', 'SPiBridgeDataType'])
+    return "Apple T2 Security Chip" in t2_raw
 
 
 def main():
