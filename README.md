@@ -151,3 +151,4 @@ This EA was written to [assist another JAMF user](https://www.jamf.com/jamf-nati
 | Date       | Version | Notes            |
 | ---------- | ------- | ---------------- |
 | 2017.11.24 | 1.0.0   | Initial release. |
+| 2019.02.19 | 1.0.1   | Addresses looping date value with new Mac systems |
